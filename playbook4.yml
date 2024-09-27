@@ -6,5 +6,5 @@
   - name: Create VLAN
     nxos_vlans:
        config:
-       - vlan_id: {{ vlan_id }}
-         name: {{ vlan_name }}
+       - vlan_id: "{{ vlan_id }}"
+         name: "{{ vlan_name }}"
