@@ -21,14 +21,17 @@ jobs:
     #runs-on: ubuntu-latest
     runs-on: self-hosted
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+    - name: Extract playbook from the last commit message
+      id: get-playbook
+      run: |
+          COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+          PLAYBOOK=$(echo "$COMMIT_MESSAGE" | grep -oE 'playbook[0-9]+\.yml' || echo "")
+          echo "COMMIT_MESSAGE=$COMMIT_MESSAGE"
+          echo "PLAYBOOK=$PLAYBOOK" >> $GITHUB_ENV
 
-      # Runs the Ansible Playbook
-      - name: Deploy Ansible Playbook
-        run: | 
-          cd /home/plexy/Development/netdevops-homelab
-          git pull
-          ansible-playbook playbook4.yml -i inventory.yml -e @vars.yml
+    - name: Display playbook to run
+      run: echo "Running playbook: ${{ env.PLAYBOOK }}"
+
+    - name: Run the specified playbook
+      if: env.PLAYBOOK != ''
+      run: ansible-playbook ${{ env.PLAYBOOK }} -i inventory.yml -e @vars.yml
