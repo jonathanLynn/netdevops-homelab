@@ -1,7 +1,7 @@
 # vars.yml
-vlan_id: 10
-vlan_name: Engineering_by_Ansible10
+vlan_id: 60
+vlan_name: Engineering_by_Ansible60
 trunk_interface: Ethernet1/16
-allowed_vlans: 10,20,30,40,50
+allowed_vlans: 60
 access_interface: Ethernet1/17
 access_vlan: 50
