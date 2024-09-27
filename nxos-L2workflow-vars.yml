@@ -1,0 +1,7 @@
+# variables relating to nxos-L2workflow.yml
+vlan_id: 70
+vlan_name: Engineering_by_Ansible
+trunk_interface: Ethernet1/18
+allowed_vlans: 70
+access_interface: Ethernet1/19
+access_vlan: 70
