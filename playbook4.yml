@@ -15,8 +15,8 @@
        - name: "{{ trunk_interface }}"
          trunk:
            native_vlan: 10
-           allowed_vlans: 2,4,15
-       - name: Ethernet1/11
+           allowed_vlans: "{{ allowed_vlans }}"
+       - name: "{{ access_interface }}"
          access:
-           vlan: 30
+           vlan: "{{ access_vlan }}"
        state: merged
