@@ -12,7 +12,7 @@
   - name: Merge provided configuration with device configuration
     nxos_l2_interfaces:
        config:
-       - name: Ethernet1/10
+       - name: "{{ trunk_interface }}"
          trunk:
            native_vlan: 10
            allowed_vlans: 2,4,15
