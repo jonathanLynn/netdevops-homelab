@@ -21,6 +21,7 @@ jobs:
     #runs-on: ubuntu-latest
     runs-on: self-hosted
 
+    steps:
       - name: Extract playbook from the last commit message
         id: get-playbook
         run: |
