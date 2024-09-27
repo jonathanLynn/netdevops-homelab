@@ -27,7 +27,8 @@ jobs:
         run: |
             git pull
             COMMIT_MESSAGE=$(git log -1 --pretty=%B)
-            PLAYBOOK=$(echo "$COMMIT_MESSAGE" | grep -oE 'playbook[0-9]+\.yml' || echo "")
+            # Extract any .yml file name after the word "playbook" in the commit message
+            PLAYBOOK=$(echo "$COMMIT_MESSAGE" | grep -oE 'playbook\s+\S+\.yml' | awk '{print $2}' || echo "")
             echo "COMMIT_MESSAGE=$COMMIT_MESSAGE"
             echo "PLAYBOOK=$PLAYBOOK" >> $GITHUB_ENV
 
