@@ -31,7 +31,8 @@ jobs:
             echo "PLAYBOOK=$PLAYBOOK" >> $GITHUB_ENV
 
       - name: Display playbook to run
-        run: echo "Running playbook: ${{ env.PLAYBOOK }}"
+        run: | 
+            echo "Running playbook: ${{ env.PLAYBOOK }}"
 
       - name: Run the specified playbook
         if: env.PLAYBOOK != ''
