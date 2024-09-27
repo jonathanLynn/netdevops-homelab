@@ -14,11 +14,19 @@
   - name: Merge provided configuration with device configuration
     nxos_l2_interfaces:
        config:
-       - name: "{{ trunk_interface }}"
-         trunk:
-           native_vlan: 10
-           allowed_vlans: "{{ allowed_vlans }}"
+       #- name: "{{ trunk_interface }}"
+       #  trunk:
+       #    native_vlan: 10
+       #    allowed_vlans: "{{ allowed_vlans }}"
        - name: "{{ access_interface }}"
          access:
            vlan: "{{ access_vlan }}"
        state: merged
+
+  - name: Update Interface Description
+    nxos_interfaces:
+      config:
+        - name: Ethernet1/17
+          description: "{{ interface_description }}"
+          enabled: true
+      state: merged

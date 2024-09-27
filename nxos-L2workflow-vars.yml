@@ -5,3 +5,4 @@ trunk_interface: Ethernet1/18
 allowed_vlans: 70
 access_interface: Ethernet1/19
 access_vlan: 70
+interface_description: Created with Ansible
