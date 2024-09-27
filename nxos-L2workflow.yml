@@ -1,6 +1,8 @@
 ---
 - name: Test NEXUS Playbook
   hosts: switches
+  vars_files:
+    - vars.yml  # Hard-coded vars file
 
   tasks:
   - name: Create VLAN

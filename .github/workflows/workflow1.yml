@@ -37,4 +37,4 @@ jobs:
 
       - name: Run the specified playbook
         if: env.PLAYBOOK != ''
-        run: ansible-playbook ${{ env.PLAYBOOK }} -i inventory.yml -e @vars.yml
+        run: ansible-playbook ${{ env.PLAYBOOK }} -i inventory.yml
