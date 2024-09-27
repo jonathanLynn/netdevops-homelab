@@ -35,3 +35,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      # Run a ping test to the default gateway
+      - name: Ping the gateway
+        run: ping -c 4 192.168.1.1
