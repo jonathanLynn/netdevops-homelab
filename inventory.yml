@@ -1,0 +1,13 @@
+---
+switches:
+  hosts:
+    nxos:
+      ansible_host: sbx-nxos-mgmt.cisco.com
+      ansible_port: 22
+      ansible_ssh_user: admin
+      ansible_ssh_pass: Admin_1234!
+      ansible_network_os: nxos
+      ansible_connection: ansible.netcommon.network_cli
+      ansible_become: False
+      ansible_become_method: enable
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
