@@ -31,4 +31,4 @@ jobs:
         run: | 
           cd /home/plexy/Development/netdevops-homelab
           git pull
-          ansible-playbook /playbook5.yml -i inventory.yml -e @vars.yml
+          ansible-playbook playbook4.yml -i inventory.yml -e @vars.yml
