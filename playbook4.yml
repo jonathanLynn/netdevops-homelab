@@ -7,4 +7,4 @@
     nxos_vlans:
        config:
        - vlan_id: "{{ vlan_id }}"
-       - name: "{{ vlan_name }}"
+         name: "{{ vlan_name }}"
