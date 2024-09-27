@@ -25,6 +25,7 @@ jobs:
       - name: Extract playbook from the last commit message
         id: get-playbook
         run: |
+            git pull
             COMMIT_MESSAGE=$(git log -1 --pretty=%B)
             PLAYBOOK=$(echo "$COMMIT_MESSAGE" | grep -oE 'playbook[0-9]+\.yml' || echo "")
             echo "COMMIT_MESSAGE=$COMMIT_MESSAGE"
