@@ -8,15 +8,15 @@
        config:
        - vlan_id: "{{ vlan_id }}"
          name: "{{ vlan_name }}"
-         
+
   - name: Merge provided configuration with device configuration
-    cisco.nxos.nxos_l2_interfaces:
-      config:
-        - name: Ethernet1/10
-          trunk:
-            native_vlan: 10
-            allowed_vlans: 2,4,15
-        - name: Ethernet1/2
-          access:
-            vlan: 30
-     state: merged
+    nxos_l2_interfaces:
+       config:
+       - name: Ethernet1/10
+         trunk:
+           native_vlan: 10
+           allowed_vlans: 2,4,15
+       - name: Ethernet1/11
+         access:
+           vlan: 30
+       state: merged
