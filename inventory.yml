@@ -2,10 +2,10 @@
 switches:
   hosts:
     nxos:
-      ansible_host: sbx-nxos-mgmt.cisco.com
+      ansible_host: 192.168.1.200
       ansible_port: 22
-      ansible_ssh_user: admin
-      ansible_ssh_pass: Admin_1234!
+      ansible_ssh_user: cisco
+      ansible_ssh_pass: cisco
       ansible_network_os: nxos
       ansible_connection: ansible.netcommon.network_cli
       ansible_become: False
