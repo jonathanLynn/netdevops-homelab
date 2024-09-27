@@ -1,3 +1,4 @@
 # vars.yml
 vlan_id: 204
 vlan_name: Engineering_by_Ansible2
+trunk_interface: Ethernet1/15
