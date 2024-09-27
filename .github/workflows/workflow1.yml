@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
 
       # Runs the Ansible Playbook
-      - name: Run a one-line script
+      - name: Deploy Ansible Playbook
         run: | 
           cd /home/plexy/Development/netdevops-homelab
           git pull
